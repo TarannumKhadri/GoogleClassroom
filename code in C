@@ -1,0 +1,67 @@
+//code for egyption problem
+
+#include<stdio.h>
+int gcd(int a, int b);
+int simp(int a, int b);
+void main()
+{
+  int n,i, u, m, k, a[10], d, b[10], sum=0, g;
+  printf("ENTER THE NUMBER OF INSTANCES: ");
+  scanf("%d",&n);
+  for(i=0;i<n;i++)
+  {
+      sum=0;
+      d=0;
+      printf("\n ENTER THE NUMBER OF FRACTIONS YOU WANT TO ADD: ");
+      scanf("%d", &m);
+      printf("ENTER THE DENOMINATOR OF EACH EGYPTIAN FRACTION: ");
+      for(k=0; k<m;k++)
+      {
+
+                  scanf("%d",&a[k]);
+             }
+
+            if (m==1)
+            {
+                    printf("1/%d=1/%d",a[0],a[0]);
+            }
+            else if(m==0)
+            {
+                    printf("ERROR!!NO FRACTION ENTERED");
+            }
+            else
+            {
+                    for(k=0; k<m-1;k++)
+                    {
+                            g = gcd(a[k],a[k+1]);
+                            d = a[k]*a[k+1]/g;
+                    }
+                    for(k=0; k<m;k++)
+                    {
+                            b[k]= d/ a[k];
+                            sum= sum+ b[k];
+                    }
+// u= gcd(sum, d);
+// sum= sum/u;
+// d= d/u;
+                     for(k=0;k<m-1;k++)
+                     {
+                            printf(" 1/%d +",a[k]);
+                     }
+                    printf(" 1/%d", a[m-1]);
+                    simp(sum, d);
+              }
+      }
+}
+int gcd(int a, int b) {
+if (b == 0)
+return a;
+else
+return gcd(b, a % b);
+}
+int simp(int a,int b){
+int l=gcd(a,b);
+a= a/l;
+b= b/l;
+printf(" = %d/%d", a,b);
+}
