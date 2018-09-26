@@ -54,9 +54,6 @@ public static void main( String [] args){
                b[k]= d/ a[k];
                sum= sum+ b[k];
           }
-// u= gcd(sum, d);
-// sum= sum/u;
-// d= d/u;
           for(int k = 0 ; k < m-1 ; k++ ){
                 System.out.println(" 1/" + a[k] + "+" );
           }
