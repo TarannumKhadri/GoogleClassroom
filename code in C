@@ -41,7 +41,7 @@ void main()
                             g = gcd(a[k],a[k+1]);                        // finding the gcd of the input denominators
                             d = a[k]*a[k+1]/g;
                     }
-                    for(k=0; k<m;k++)
+                    for(k=0; k<m;k++)                                   //loop for finding sum of the fractions
                     {
                             b[k]= d/ a[k];
                             sum= sum+ b[k];                              //statement for finding sum of the fractions 
